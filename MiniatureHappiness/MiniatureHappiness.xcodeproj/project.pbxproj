@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		013CB4981B25378F00E423ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB4971B25378F00E423ED /* ViewController.swift */; };
+		013CB49A1B253D8000E423ED /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB4991B253D8000E423ED /* DataSource.swift */; };
 		01F351571B2502F500156164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F351561B2502F500156164 /* AppDelegate.swift */; };
 		01F3515C1B2502F500156164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515A1B2502F500156164 /* Main.storyboard */; };
 		01F3515E1B2502F500156164 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515D1B2502F500156164 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		013CB4971B25378F00E423ED /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		013CB4991B253D8000E423ED /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		01F351511B2502F500156164 /* MiniatureHappiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniatureHappiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F351551B2502F500156164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F351561B2502F500156164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		014EA5671B25315600FB24CB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				013CB4991B253D8000E423ED /* DataSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				01F351571B2502F500156164 /* AppDelegate.swift in Sources */,
 				01F351791B251CE900156164 /* MediaTableViewCell.swift in Sources */,
 				013CB4981B25378F00E423ED /* ViewController.swift in Sources */,
+				013CB49A1B253D8000E423ED /* DataSource.swift in Sources */,
 				01F351771B2518C900156164 /* AllMediaTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

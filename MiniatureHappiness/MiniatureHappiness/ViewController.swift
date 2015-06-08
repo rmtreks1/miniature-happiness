@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        DataSource.sharedInstance.populatePhotos()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,22 +37,6 @@ class ViewController: UIViewController {
     */
     
     
-    func countOfPhotos(){
-        
-        
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [
-            NSSortDescriptor(key: "creationDate", ascending: false)
-        ]
-        
-        photosResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
-        //        println(photosResult.count)
-        
-        var videosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Video, options: nil)
-        println("photos: \(photosResult!.count) and videos: \(videosResult.count)")
-        
-        
-    }
-
+   
 
 }

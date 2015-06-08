@@ -11,14 +11,14 @@ import Photos
 
 class AllMediaTableViewController: UITableViewController {
     
-    var photosResult: PHFetchResult?
+
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        countOfPhotos()
+        DataSource.sharedInstance.populatePhotos()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,7 +43,7 @@ class AllMediaTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return photosResult!.count
+        return DataSource.sharedInstance.photosFetchResult!.count
     }
 
     
@@ -53,7 +53,7 @@ class AllMediaTableViewController: UITableViewController {
         
         // Configure the cell...
         let thumbnail = CGSizeMake(CGFloat(100), CGFloat(100))
-        let asset = self.photosResult![indexPath.row] as! PHAsset
+        let asset = DataSource.sharedInstance.photosFetchResult![indexPath.row] as! PHAsset
         let manager = PHImageManager.defaultManager()
         
 
@@ -128,23 +128,4 @@ class AllMediaTableViewController: UITableViewController {
     */
     
     
-    // MARK: - PHPhotos
-    
-    func countOfPhotos(){
-        
-        
-        let fetchOptions = PHFetchOptions()
-        fetchOptions.sortDescriptors = [
-            NSSortDescriptor(key: "creationDate", ascending: false)
-        ]
-        
-        photosResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
-        //        println(photosResult.count)
-        
-        var videosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Video, options: nil)
-        println("photos: \(photosResult!.count) and videos: \(videosResult.count)")
-        
-
-    }
-
 }
