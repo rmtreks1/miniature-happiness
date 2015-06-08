@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CbZ-aJ-uiF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--All Media Table View Controller-->
+        <scene sceneID="QXW-gx-rUM">
+            <objects>
+                <tableViewController id="Hc0-Oq-Laa" customClass="AllMediaTableViewController" customModule="MiniatureHappiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="126" sectionHeaderHeight="22" sectionFooterHeight="22" id="08E-ub-Mdo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="126" id="nYg-ha-c25" customClass="MediaTableViewCell" customModule="MiniatureHappiness" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYg-ha-c25" id="S14-gd-AcO">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="batman" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-VT-DzX">
+                                            <rect key="frame" x="13" y="13" width="100" height="99"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="hXd-UW-ueU"/>
+                                                <constraint firstAttribute="width" constant="100" id="weV-rW-Vyu"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="hXd-UW-ueU"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ixt-VT-DzX" secondAttribute="bottom" constant="5" id="9nW-BL-AT2"/>
+                                        <constraint firstItem="Ixt-VT-DzX" firstAttribute="leading" secondItem="S14-gd-AcO" secondAttribute="leadingMargin" constant="5" id="Ckr-mF-7FB"/>
+                                        <constraint firstItem="Ixt-VT-DzX" firstAttribute="top" secondItem="S14-gd-AcO" secondAttribute="topMargin" constant="5" id="Z0Q-Kc-3OF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mediaImage" destination="Ixt-VT-DzX" id="6Bv-F6-yaS"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hc0-Oq-Laa" id="Cfo-gV-hZb"/>
+                            <outlet property="delegate" destination="Hc0-Oq-Laa" id="qEe-vQ-j3K"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="urj-C2-Ml2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bpB-rC-tlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uGF-cu-s8Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CbZ-aJ-uiF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7g2-7Z-UnM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hc0-Oq-Laa" kind="relationship" relationship="rootViewController" id="5J2-Eb-d2g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPW-1T-hr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="989"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="batman" width="2000" height="1805"/>
+    </resources>
+</document>
