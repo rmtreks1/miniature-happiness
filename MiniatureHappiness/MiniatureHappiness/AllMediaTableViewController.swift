@@ -56,8 +56,20 @@ class AllMediaTableViewController: UITableViewController {
         let asset = self.photosResult![indexPath.row] as! PHAsset
         let manager = PHImageManager.defaultManager()
         
+
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        let dateString = formatter.stringFromDate(asset.creationDate)
+        
+        
+        
+        
         manager.requestImageForAsset(asset, targetSize: thumbnail, contentMode: PHImageContentMode.AspectFit, options: nil) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
             cell.mediaImage.image = result
+            
+            let imageDate = asset.creationDate
+            cell.dateLabel.text = dateString
+            println("\(dateString)")
         }
 
         

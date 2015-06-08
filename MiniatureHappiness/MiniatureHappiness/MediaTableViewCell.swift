@@ -11,6 +11,7 @@ import UIKit
 class MediaTableViewCell: UITableViewCell {
 
     @IBOutlet var mediaImage: UIImageView!
+    @IBOutlet var dateLabel: UILabel!
     
     
     override func awakeFromNib() {

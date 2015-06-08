@@ -19,7 +19,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYg-ha-c25" id="S14-gd-AcO">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="batman" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-VT-DzX">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="batman" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-VT-DzX">
                                             <rect key="frame" x="13" y="13" width="100" height="99"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="hXd-UW-ueU"/>
@@ -31,14 +31,36 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3b-Jj-Kud">
+                                            <rect key="frame" x="362" y="52" width="230" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="230" id="Sb9-oX-H5m"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ixt-VT-DzX" secondAttribute="bottom" constant="5" id="9nW-BL-AT2"/>
                                         <constraint firstItem="Ixt-VT-DzX" firstAttribute="leading" secondItem="S14-gd-AcO" secondAttribute="leadingMargin" constant="5" id="Ckr-mF-7FB"/>
+                                        <constraint firstItem="l3b-Jj-Kud" firstAttribute="leading" secondItem="Ixt-VT-DzX" secondAttribute="trailing" constant="249" id="DKC-9w-19M"/>
+                                        <constraint firstItem="l3b-Jj-Kud" firstAttribute="top" secondItem="S14-gd-AcO" secondAttribute="topMargin" constant="44" id="Fbj-nm-RjK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="l3b-Jj-Kud" secondAttribute="bottom" constant="44" id="LEh-Id-l6u"/>
+                                        <constraint firstItem="l3b-Jj-Kud" firstAttribute="trailing" secondItem="S14-gd-AcO" secondAttribute="trailingMargin" id="Rk9-pg-hyl"/>
                                         <constraint firstItem="Ixt-VT-DzX" firstAttribute="top" secondItem="S14-gd-AcO" secondAttribute="topMargin" constant="5" id="Z0Q-Kc-3OF"/>
+                                        <constraint firstItem="Ixt-VT-DzX" firstAttribute="centerY" secondItem="l3b-Jj-Kud" secondAttribute="centerY" id="kWb-mj-b6t"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="DKC-9w-19M"/>
+                                            <exclude reference="Fbj-nm-RjK"/>
+                                            <exclude reference="LEh-Id-l6u"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="l3b-Jj-Kud" id="IIA-Ez-rNg"/>
                                     <outlet property="mediaImage" destination="Ixt-VT-DzX" id="6Bv-F6-yaS"/>
                                 </connections>
                             </tableViewCell>
