@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01F351571B2502F500156164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F351561B2502F500156164 /* AppDelegate.swift */; };
-		01F351591B2502F500156164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F351581B2502F500156164 /* ViewController.swift */; };
 		01F3515C1B2502F500156164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515A1B2502F500156164 /* Main.storyboard */; };
 		01F3515E1B2502F500156164 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515D1B2502F500156164 /* Images.xcassets */; };
 		01F351611B2502F500156164 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515F1B2502F500156164 /* LaunchScreen.xib */; };
@@ -31,7 +30,6 @@
 		01F351511B2502F500156164 /* MiniatureHappiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniatureHappiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F351551B2502F500156164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F351561B2502F500156164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01F351581B2502F500156164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01F3515B1B2502F500156164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01F3515D1B2502F500156164 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		01F351601B2502F500156164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 			children = (
 				01F351761B2518C900156164 /* AllMediaTableViewController.swift */,
 				01F351561B2502F500156164 /* AppDelegate.swift */,
-				01F351581B2502F500156164 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01F351591B2502F500156164 /* ViewController.swift in Sources */,
 				01F351571B2502F500156164 /* AppDelegate.swift in Sources */,
 				01F351791B251CE900156164 /* MediaTableViewCell.swift in Sources */,
 				01F351771B2518C900156164 /* AllMediaTableViewController.swift in Sources */,
