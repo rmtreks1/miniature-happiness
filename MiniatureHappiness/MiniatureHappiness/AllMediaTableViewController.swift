@@ -12,6 +12,7 @@ import Photos
 class AllMediaTableViewController: UITableViewController {
     
     var photosResult: PHFetchResult?
+
     
 
     override func viewDidLoad() {
@@ -51,7 +52,18 @@ class AllMediaTableViewController: UITableViewController {
 
         
         // Configure the cell...
-        cell.mediaImage.image = UIImage(named: "gordon")
+        let thumbnail = CGSizeMake(CGFloat(100), CGFloat(100))
+        let asset = self.photosResult![indexPath.row] as! PHAsset
+        let manager = PHImageManager.defaultManager()
+        
+        manager.requestImageForAsset(asset, targetSize: thumbnail, contentMode: PHImageContentMode.AspectFit, options: nil) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
+            cell.mediaImage.image = result
+        }
+
+        
+        
+        
+//        cell.mediaImage.image = UIImage(named: "gordon")
         
         return cell
     }
@@ -111,6 +123,8 @@ class AllMediaTableViewController: UITableViewController {
         
         var videosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Video, options: nil)
         println("photos: \(photosResult!.count) and videos: \(videosResult.count)")
+        
+
     }
 
 }
