@@ -57,6 +57,7 @@ class AllMediaTableViewController: UITableViewController {
         let manager = PHImageManager.defaultManager()
         
 
+        // formatting the creation date
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         let dateString = formatter.stringFromDate(asset.creationDate)
@@ -69,7 +70,7 @@ class AllMediaTableViewController: UITableViewController {
             
             let imageDate = asset.creationDate
             cell.dateLabel.text = dateString
-            println("\(dateString)")
+            
         }
 
         
@@ -130,7 +131,14 @@ class AllMediaTableViewController: UITableViewController {
     // MARK: - PHPhotos
     
     func countOfPhotos(){
-        photosResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
+        
+        
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [
+            NSSortDescriptor(key: "creationDate", ascending: false)
+        ]
+        
+        photosResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: fetchOptions)
         //        println(photosResult.count)
         
         var videosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Video, options: nil)

@@ -75,6 +75,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		014EA5671B25315600FB24CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		01F351481B2502F500156164 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +103,7 @@
 		01F351531B2502F500156164 /* MiniatureHappiness */ = {
 			isa = PBXGroup;
 			children = (
+				014EA5671B25315600FB24CB /* Model */,
 				0149BB421B2520DB00F3DA64 /* View */,
 				0149BB431B2520EE00F3DA64 /* Controller */,
 				01F3515A1B2502F500156164 /* Main.storyboard */,
