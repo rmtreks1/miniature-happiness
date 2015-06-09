@@ -70,11 +70,59 @@
                             <outlet property="delegate" destination="Hc0-Oq-Laa" id="qEe-vQ-j3K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="urj-C2-Ml2"/>
+                    <navigationItem key="navigationItem" id="urj-C2-Ml2">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Z6e-G8-u0t">
+                            <connections>
+                                <segue destination="rCr-up-Wa3" kind="show" id="ucI-dw-R7L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpB-rC-tlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2294" y="1746"/>
+        </scene>
+        <!--Grouped Table View Controller-->
+        <scene sceneID="aWp-9n-3mW">
+            <objects>
+                <tableViewController id="rCr-up-Wa3" customClass="GroupedTableViewController" customModule="MiniatureHappiness" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="HnD-X7-g5X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="h1B-c7-sFk" customClass="MomentsTableViewCell" customModule="MiniatureHappiness" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h1B-c7-sFk" id="0fd-s8-AOs">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="brr-8G-Mza">
+                                            <rect key="frame" x="225" y="8" width="150" height="133"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="q8h-EY-O3B"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerX" secondItem="brr-8G-Mza" secondAttribute="centerX" id="D15-Z0-bbX"/>
+                                        <constraint firstItem="brr-8G-Mza" firstAttribute="top" secondItem="0fd-s8-AOs" secondAttribute="topMargin" id="FFg-NQ-GNJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="brr-8G-Mza" secondAttribute="bottom" id="nLg-0V-6Hg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photoImage" destination="brr-8G-Mza" id="qfs-4c-GEj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rCr-up-Wa3" id="TIu-mi-wAa"/>
+                            <outlet property="delegate" destination="rCr-up-Wa3" id="KQN-PI-cQL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6s-BT-wJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3091" y="1746"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KWm-NA-egn">

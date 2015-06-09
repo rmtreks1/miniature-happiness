@@ -14,6 +14,8 @@ class DataSource: NSObject {
     static let sharedInstance = DataSource()
     var photosFetchResult: PHFetchResult?
     var videosFetchResult: PHFetchResult?
+    var photosGroupedByDate = [()]
+    var momentsFetchResult: PHFetchResult?
 
 
     func populatePhotos(){
@@ -32,6 +34,12 @@ class DataSource: NSObject {
  
     
     
+    func populateMoments(){
+        self.momentsFetchResult = PHCollectionList.fetchCollectionListsWithType(PHCollectionListType.MomentList, subtype: PHCollectionListSubtype.Any, options: nil)
+        
+        println("count of moments: \(self.momentsFetchResult!.count)")
+        
+    }
     
     
     

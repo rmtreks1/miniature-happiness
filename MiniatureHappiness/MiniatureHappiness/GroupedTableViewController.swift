@@ -1,25 +1,18 @@
 //
-//  AllMediaTableViewController.swift
+//  GroupedTableViewController.swift
 //  MiniatureHappiness
 //
-//  Created by Roshan Mahanama on 8/06/2015.
+//  Created by Roshan Mahanama on 9/06/2015.
 //  Copyright (c) 2015 RMTREKS. All rights reserved.
 //
 
 import UIKit
 import Photos
 
-class AllMediaTableViewController: UITableViewController {
-    
-
-
-    
+class GroupedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DataSource.sharedInstance.populatePhotos()
-        DataSource.sharedInstance.populateMoments()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,47 +31,29 @@ class AllMediaTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return DataSource.sharedInstance.momentsFetchResult!.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return DataSource.sharedInstance.photosFetchResult!.count
+        return 1
     }
+    
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let moment = DataSource.sharedInstance.momentsFetchResult![section] as! PHCollectionList
+        let momentStartDate = moment.startDate
+        return "test"
+    }
+    
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MediaTableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MediaTableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> MomentsTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MomentsTableViewCell
 
-        
         // Configure the cell...
-        let thumbnail = CGSizeMake(CGFloat(100), CGFloat(100))
-        let asset = DataSource.sharedInstance.photosFetchResult![indexPath.row] as! PHAsset
-        let manager = PHImageManager.defaultManager()
-        
 
-        // formatting the creation date
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        let dateString = formatter.stringFromDate(asset.creationDate)
-        
-        
-        
-        
-        manager.requestImageForAsset(asset, targetSize: thumbnail, contentMode: PHImageContentMode.AspectFit, options: nil) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
-            cell.mediaImage.image = result
-            
-            let imageDate = asset.creationDate
-            cell.dateLabel.text = dateString
-            
-        }
-
-        
-        
-        
-//        cell.mediaImage.image = UIImage(named: "gordon")
-        
         return cell
     }
     
@@ -127,6 +102,5 @@ class AllMediaTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
+
 }
