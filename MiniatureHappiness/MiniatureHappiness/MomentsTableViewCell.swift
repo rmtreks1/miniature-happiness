@@ -1,18 +1,16 @@
 //
-//  MediaTableViewCell.swift
+//  MomentsTableViewCell.swift
 //  MiniatureHappiness
 //
-//  Created by Roshan Mahanama on 8/06/2015.
+//  Created by Roshan Mahanama on 9/06/2015.
 //  Copyright (c) 2015 RMTREKS. All rights reserved.
 //
 
 import UIKit
 
-class MediaTableViewCell: UITableViewCell {
+class MomentsTableViewCell: UITableViewCell {
 
-    @IBOutlet var mediaImage: UIImageView!
-    @IBOutlet var dateLabel: UILabel!
-    
+    @IBOutlet var photoImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

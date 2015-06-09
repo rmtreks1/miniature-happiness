@@ -10,46 +10,33 @@ import UIKit
 import Photos
 
 class ViewController: UIViewController {
+    
+    var photosResult: PHFetchResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        countOfPhotos()
+
+        // Do any additional setup after loading the view.
+        DataSource.sharedInstance.populatePhotos()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
     
-    
-    func countOfPhotos(){
-        var photosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: nil)
-//        println(photosResult.count)
-        
-        var videosResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Video, options: nil)
-        println("photos: \(photosResult.count) and videos: \(videosResult.count)")
-        
-        
-//        
-//        
-//        
-//        PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-//        PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
-//        self.collectionsFetchResults = @[smartAlbums, topLevelUserCollections];
-//        self.collectionsLocalizedTitles = @[NSLocalizedString(@"Smart Albums", @""), NSLocalizedString(@"Albums", @"")];
-//        
-//        [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
-//        
-//        
-//        
-        
-        
-        
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
     
     
-}
+   
 
+}
