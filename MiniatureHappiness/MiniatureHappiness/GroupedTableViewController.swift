@@ -13,13 +13,21 @@ class GroupedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,20 +39,31 @@ class GroupedTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return DataSource.sharedInstance.momentsFetchResult!.count
+        println(DataSource.sharedInstance.photosGroupedByDate.count)
+        
+        return DataSource.sharedInstance.photosGroupedByDate.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        
+        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[section]
+        
+        return dateRangeAssets.count
     }
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let moment = DataSource.sharedInstance.momentsFetchResult![section] as! PHCollectionList
-        let momentStartDate = moment.startDate.monthDayYear()
-        return momentStartDate
+        
+        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[section]
+        println("section is \(section) and dateRangeAssets count is: \(dateRangeAssets.count)")
+        if dateRangeAssets.count > 0 {
+            let dateForGroup = dateRangeAssets.first!.creationDate.monthDayYear()
+            return dateForGroup
+        }
+        
+        return "Weird empty date range"
     }
     
 
@@ -53,6 +72,20 @@ class GroupedTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MomentsTableViewCell
 
         // Configure the cell...
+        // Configure the cell...
+        let thumbnail = CGSizeMake(CGFloat(150), CGFloat(150))
+        
+        // getting the asset
+        let dateRangeAssets = DataSource.sharedInstance.photosGroupedByDate[indexPath.section]
+        let asset = dateRangeAssets[indexPath.row] as PHAsset
+        
+        // get the image
+        let manager = PHImageManager.defaultManager()
+        
+        manager.requestImageForAsset(asset, targetSize: thumbnail, contentMode: PHImageContentMode.AspectFit, options: nil) { (result:UIImage!, info: [NSObject : AnyObject]!) -> Void in
+            cell.photoImage.image = result
+        }
+        
 
         return cell
     }

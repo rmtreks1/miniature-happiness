@@ -31,6 +31,7 @@ class DataSource: NSObject {
         println("photos: \(photosFetchResult!.count) and videos: \(videosFetchResult!.count)")
         
         groupIntoDays()
+
         
     }
  
@@ -49,13 +50,18 @@ class DataSource: NSObject {
                 if NSDate.areDatesSameDay(currentDateOfFilter, dateTwo: value.creationDate) {
                     currentAssetsGroup.append(value)
                 } else {
-                    photosGroupedByDate.append(currentAssetsGroup)
+                    if currentAssetsGroup.count > 0 {
+                        photosGroupedByDate.append(currentAssetsGroup)
+                    }
                     currentAssetsGroup = []
                     currentAssetsGroup.append(value)
                     currentDateOfFilter = value.creationDate
                 }
             }
             
+            if currentAssetsGroup.count > 0 {
+               photosGroupedByDate.append(currentAssetsGroup)
+            }
         }
      
         println("number of days: \(self.photosGroupedByDate.count)")
