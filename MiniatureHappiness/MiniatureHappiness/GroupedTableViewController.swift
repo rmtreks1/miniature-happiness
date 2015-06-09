@@ -43,8 +43,8 @@ class GroupedTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let moment = DataSource.sharedInstance.momentsFetchResult![section] as! PHCollectionList
-        let momentStartDate = moment.startDate
-        return "test"
+        let momentStartDate = moment.startDate.monthDayYear()
+        return momentStartDate
     }
     
 
