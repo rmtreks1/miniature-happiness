@@ -11,6 +11,7 @@
 		013CB49A1B253D8000E423ED /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB4991B253D8000E423ED /* DataSource.swift */; };
 		01BFB1B51B26705C004FB6A7 /* GroupedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BFB1B41B26705C004FB6A7 /* GroupedTableViewController.swift */; };
 		01BFB1B71B26713C004FB6A7 /* MomentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BFB1B61B26713C004FB6A7 /* MomentsTableViewCell.swift */; };
+		01BFB1BA1B2674A1004FB6A7 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BFB1B91B2674A1004FB6A7 /* DateExtension.swift */; };
 		01F351571B2502F500156164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F351561B2502F500156164 /* AppDelegate.swift */; };
 		01F3515C1B2502F500156164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515A1B2502F500156164 /* Main.storyboard */; };
 		01F3515E1B2502F500156164 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F3515D1B2502F500156164 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 		013CB4991B253D8000E423ED /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		01BFB1B41B26705C004FB6A7 /* GroupedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupedTableViewController.swift; sourceTree = "<group>"; };
 		01BFB1B61B26713C004FB6A7 /* MomentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentsTableViewCell.swift; sourceTree = "<group>"; };
+		01BFB1B91B2674A1004FB6A7 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = MiniatureHappiness/DateExtension.swift; sourceTree = "<group>"; };
 		01F351511B2502F500156164 /* MiniatureHappiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniatureHappiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F351551B2502F500156164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01F351561B2502F500156164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,9 +96,18 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		01BFB1B81B267477004FB6A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01BFB1B91B2674A1004FB6A7 /* DateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		01F351481B2502F500156164 = {
 			isa = PBXGroup;
 			children = (
+				01BFB1B81B267477004FB6A7 /* Extensions */,
 				01F351531B2502F500156164 /* MiniatureHappiness */,
 				01F351691B2502F500156164 /* MiniatureHappinessTests */,
 				01F351521B2502F500156164 /* Products */,
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01F351571B2502F500156164 /* AppDelegate.swift in Sources */,
+				01BFB1BA1B2674A1004FB6A7 /* DateExtension.swift in Sources */,
 				01F351791B251CE900156164 /* MediaTableViewCell.swift in Sources */,
 				01BFB1B71B26713C004FB6A7 /* MomentsTableViewCell.swift in Sources */,
 				01BFB1B51B26705C004FB6A7 /* GroupedTableViewController.swift in Sources */,

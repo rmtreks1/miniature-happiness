@@ -62,7 +62,8 @@ class AllMediaTableViewController: UITableViewController {
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.MediumStyle
         let dateString = formatter.stringFromDate(asset.creationDate)
-        
+        let dateString2 = asset.creationDate.monthDayYear()
+        println("date string 2: \(dateString2)")
         
         
         
